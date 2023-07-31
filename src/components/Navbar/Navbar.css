@@ -1,0 +1,28 @@
+#logo-design {
+    width: 70px;
+    height: 60px;
+    max-width: 70px;
+    max-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 12px;
+    background: var(--dark-theme);
+    color: white;
+    box-shadow: 7px 7px 7px var(--jewel);
+    font-size: 250%;
+    font-weight: bold;
+    margin-left: 13%;
+    margin-top: 3%;
+    animation: rotate 1.5s;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+ 

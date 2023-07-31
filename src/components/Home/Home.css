@@ -1,0 +1,95 @@
+
+#software {
+  position: absolute;
+  font-size: 550%;
+  width: 500px;
+  word-spacing: -30px;
+  z-index: -1;
+  margin-top: -40px;
+  color: #808080;
+  opacity: 15%;
+  animation: transitionIn 1s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    margin-top: -80px;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 15%;
+    margin-top: -40px;
+    transform: rotateX(0);
+  }
+}
+
+#logo-design:hover {
+  box-shadow: 7px 7px 7px var(--fushia);
+}
+#Home {
+  color: white;
+  margin: 0 auto;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+  height: 88vh;
+}
+
+#helloworld {
+  font-size: 200%;
+}
+
+#name {
+  font-size: 500%;
+}
+
+#period {
+  font-size: 400%;
+  color: var(--jewel);
+}
+
+#homeImage {
+  width: 50%;
+  text-align: center;
+}
+
+#descriptors {
+  font-size: 180%;
+  margin-bottom: 5%;
+}
+
+#homeImage img {
+  max-width: 100%;
+  height: 80%;
+  margin-left: 20%;
+  animation: sax 2s;
+}
+
+@keyframes sax {
+  from {
+    transform: scale(0.7);
+    opacity: 0%;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#homeContent {
+  padding-top: 18%;
+}
+
+#scroll {
+  animation: scrollkey 2s;
+}
+
+@keyframes scrollkey {
+  from {
+    margin-top: 80px;
+    opacity: 0%;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
