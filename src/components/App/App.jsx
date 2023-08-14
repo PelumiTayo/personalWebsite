@@ -4,6 +4,8 @@ import "./App.css"
 import Home from "../Home/Home"
 import Skills from '../Skills/Skills'
 import Navbar from '../Navbar/Navbar'
+import Projects from '../Projects/Projects'
+
 
 
 export default function App(){
@@ -13,7 +15,7 @@ export default function App(){
       <Navbar/>
       <Home/>
       <Skills/>
-    
+    <Projects/>
     </Fragment>
 
 

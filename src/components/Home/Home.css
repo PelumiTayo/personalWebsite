@@ -50,11 +50,13 @@
 }
 
 #homeImage {
-  width: 50%;
+  width: 100%;
   text-align: center;
+  object-fit: contain;
 }
 
 #descriptors {
+  max-width: 90%;
   font-size: 180%;
   margin-bottom: 5%;
 }

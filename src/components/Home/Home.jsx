@@ -15,8 +15,8 @@ export default function Home() {
           <span id="name">Oluwapelumi </span> <span id="period"> . </span>{" "}
           <br />
           <div id="descriptors">
-            Student @ Wesleyan University | Backend Developer | Digital <br />{" "}
-            Marketer | Course Assistant | QuestBridge Match Scholar | <br />
+            Student @ Wesleyan University | Backend Developer | Digital 
+            Marketer | Course Assistant | QuestBridge Match Scholar | 
             Resident Advisor | Musician | Crocheter | Afrobeats and Afro-Dance
             Fanatic
           </div>

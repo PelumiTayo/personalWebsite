@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./Skills.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, fab } from "@fortawesome/free-brands-svg-icons";
 import { faC, faDatabase} from "@fortawesome/free-solid-svg-icons";
 export default function Skills() {
   console.log(fab);
@@ -101,6 +101,16 @@ export default function Skills() {
                 </div>
                 <div class="skills-text">
                   <div class="skills-label">PostgresSql</div>
+                </div>
+              </div>
+            </div>
+            <div class="github">
+              <div class="each-skill">
+                <div class="circle">
+                  <FontAwesomeIcon icon={faGithub} />{" "}
+                </div>
+                <div class="skills-text">
+                  <div class="skills-label">GitHub</div>
                 </div>
               </div>
             </div>
