@@ -7,9 +7,6 @@ export default function Home() {
     <Fragment>
       <div id="Home">
         <div id="homeContent">
-          {/* <form action="src/assets/Tayo-Orisadare_Pelumi_2025.pdf" method="get" target="_blank">
-          <button type="submit">Resume</button>
-        </form> */}
           <p id="software">Software Engineer</p>
           <span id="helloworld"> Hello, it’s me </span> <br />
           <span id="name">Oluwapelumi </span> <span id="period"> . </span>{" "}
@@ -22,7 +19,9 @@ export default function Home() {
           </div>
           <br />
           <div id="scroll">
-            <span style={{ fontSize: "120%" }}>SCROLL FOR MORE</span>
+            <a href="#Skillset" style={{textDecoration: "none"}}>
+            <span style={{ fontSize: "120%", color: "white"}}>SCROLL FOR MORE</span>
+            </a>
             <br />
             <span style={{ color: "var(--fushia)" }}>
               ______________________

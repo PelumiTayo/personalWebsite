@@ -1,0 +1,9 @@
+#githubLink{
+    font-size: 250%; 
+    color: white;
+    margin-bottom: 10%;
+}
+
+#githubLink:hover{
+    color:var(--fushia)
+}

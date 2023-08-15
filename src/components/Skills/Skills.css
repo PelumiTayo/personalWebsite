@@ -1,15 +1,33 @@
-.Skills{
+#Skillset{
     color: white;
     display: flex;
     width: 75%;
+    max-width: 75%;
     margin: 0 auto;
     justify-content: space-between;
+    padding: 5%;
+}
+
+#resumeButton{
+  border: 1px solid var(--fushia);
+  background-color: var(--dark-theme);
+  color: var(--fushia);
+  
+  border-radius: 30px;
+  padding: 8px;
+}
+
+#resumeButton:hover{
+  cursor: pointer;
+  background-color: var(--fushia);
+  color: white;
 }
 
 
 .technical-skills-container {
     height: 500px;
     padding: 30px;
+    width: 40%;
   }
   
   .lang-skills-container {
@@ -38,18 +56,13 @@
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    border: 2px solid var(--fushia);
+    margin: 5%;
+    border: 2px solid var(--jewel);
     box-shadow: 6px 10px 5px 0 rgba(0, 0, 0, .1);
     position: relative;
     z-index: 0;
     justify-content: center;
   }
-  
-  /* .circle > FontAwesomeIcon {
-    z-index: 1;
-    position: relative;
-    font-size: 40px;
-  } */
   
   .skills-label {
     text-align: center;
@@ -58,3 +71,86 @@
     margin-top: 7px;
     font-size: 15px;
    } 
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  
+  .animation {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: #fff;
+    display: inline-block;
+    animation: fadeIn 1.5s forwards;
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  
+  .first {
+    display: inline-block;
+    animation: firstSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: 1;
+    position: relative;
+    color: var(--fushia);
+  }
+  
+  .oh {
+    display: inline-flex;
+    overflow: hidden;
+  }
+  
+  .second {
+    animation: secondSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    font-weight: 100;
+    z-index: -1;
+    display: inline-block;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    } 
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes firstSpan {
+    0% {
+      transform: translateX(50%);
+    }
+    60% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes secondSpan {
+    0% {
+      transform: translateX(-100%);
+    }
+    60% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-0%);
+    }
+  }
+  
+  
+ 

@@ -2,14 +2,86 @@ import React, { Fragment } from "react";
 import "./Skills.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, fab } from "@fortawesome/free-brands-svg-icons";
-import { faC, faDatabase} from "@fortawesome/free-solid-svg-icons";
+import { faC, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { createStyles, Avatar, Text, Group } from "@mantine/core";
+import { IconPhoneCall, IconAt, IconBook } from "@tabler/icons-react";
 export default function Skills() {
   console.log(fab);
+
+  const useStyles = createStyles((theme) => ({
+    icon: {
+      color:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[3]
+          : theme.colors.gray[5],
+    },
+
+    name: {
+      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    },
+  }));
+
+  const { classes } = useStyles();
+
   return (
-    <div className="Skills">
+    <div id="Skillset">
       <div id="skillsContent">
-        <p>My skillset</p>
-        <p>Aspiring Software Engineer/Front-End Developer</p>
+        <div class="container">
+          <h1>
+            <div class="animation">
+              <span class="first">My</span>
+              <span class="oh">
+                <span class="second">&nbsp;Skillset</span>
+              </span>
+            </div>
+          </h1>
+        </div>
+        <div>
+          <Group noWrap>
+            <Avatar src={"pelumi.png"} size={200} radius="md" />
+            <div>
+              <Text fz="lg" tt="uppercase" fw={700} c="dimmed">
+                {"Software Engineer"}
+              </Text>
+
+              <Text fz="xl" fw={500} className={classes.name}>
+                {"Oluwapelumi Tayo-Orisadare"}
+              </Text>
+
+              <Group noWrap spacing={10} mt={3}>
+                <IconAt stroke={1.5} size="1rem" className={classes.icon} />
+                <Text fz="lg" c="dimmed">
+                  {"pelumi.tayoorisadare@gmail.com"}
+                </Text>
+              </Group>
+
+              <Group noWrap spacing={10} mt={5}>
+                <IconPhoneCall
+                  stroke={1.5}
+                  size="1rem"
+                  className={classes.icon}
+                />
+                <Text fz="lg" c="dimmed">
+                  {"708-916-5893"}
+                </Text>
+              </Group>
+              <Group noWrap spacing={10} mt={5}>
+                <IconBook
+                  stroke={1.5}
+                  size="1rem"
+                  className={classes.icon}
+                />
+                <form
+                  action="Tayo-Orisadare_Pelumi.pdf"
+                  method="get"
+                  target="_blank"
+                >
+                  <button id="resumeButton" type="submit">Resume</button>
+                </form>
+              </Group>
+            </div>
+          </Group>
+        </div>
       </div>
       <div class="technical-skills-container">
         <div class="skills-bottom">
@@ -20,17 +92,17 @@ export default function Skills() {
                   <FontAwesomeIcon icon={fab.faPython} />{" "}
                 </div>
                 <div class="skills-text">
-                  <div class="skills-label">PYTHON</div>
+                  <div class="skills-label">Python</div>
                 </div>
               </div>
             </div>
             <div class="nodejs-lang">
               <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faNodeJs} />{" "}
+                <div class="circle" style={{ fontSize: "250%" }}>
+                  <FontAwesomeIcon icon={fab.faNode} />{" "}
                 </div>
                 <div class="skills-text">
-                  <div class="skills-label">NODE.JS</div>
+                  <div class="skills-label">Node.js</div>
                 </div>
               </div>
             </div>
@@ -50,7 +122,7 @@ export default function Skills() {
                   <FontAwesomeIcon icon={fab.faJs} />{" "}
                 </div>
                 <div class="skills-text">
-                  <div class="skills-label">JAVASCRIPT</div>
+                  <div class="skills-label">JavaScript</div>
                 </div>
               </div>
             </div>
@@ -80,7 +152,7 @@ export default function Skills() {
                   <FontAwesomeIcon icon={fab.faFigma} />{" "}
                 </div>
                 <div class="skills-text">
-                  <div class="skills-label">FIGMA</div>
+                  <div class="skills-label">Figma</div>
                 </div>
               </div>
             </div>
@@ -90,7 +162,7 @@ export default function Skills() {
                   <FontAwesomeIcon icon={fab.faGitAlt} />{" "}
                 </div>
                 <div class="skills-text">
-                  <div class="skills-label">GIT</div>
+                  <div class="skills-label">Git</div>
                 </div>
               </div>
             </div>
@@ -117,7 +189,7 @@ export default function Skills() {
             <div class="express">
               <div class="each-skill">
                 <div class="circle">
-                <FontAwesomeIcon icon={fab.faReact} />{" "}
+                  <FontAwesomeIcon icon={fab.faReact} />{" "}
                 </div>
                 <div class="skills-text">
                   <div class="skills-label">React</div>
