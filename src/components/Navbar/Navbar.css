@@ -7,7 +7,7 @@
     text-align: center;
     padding-top: 12px;
     background: var(--dark-theme);
-    color: white;
+    color: var(--stark);
     box-shadow: 7px 7px 7px var(--jewel);
     font-size: 250%;
     font-weight: bold;

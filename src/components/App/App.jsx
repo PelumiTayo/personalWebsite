@@ -5,6 +5,8 @@ import Home from "../Home/Home";
 import Skills from "../Skills/Skills";
 import Navbar from "../Navbar/Navbar";
 import Projects from "../Projects/Projects";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
       <Home />
       <Skills />
       <Projects />
+      <About/>
+      <Contact/>
     </Fragment>
   );
 }

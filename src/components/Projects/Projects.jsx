@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 import "./Projects.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, fab } from "@fortawesome/free-brands-svg-icons";
+import { faChrome, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -48,7 +48,7 @@ function Card({ image, title, category, website }) {
     <Paper
       shadow="lg"
       p="lg"
-      radius="md"
+      radius="lg"
       sx={{
         backgroundImage: `url(${image})`,
         backgroundSize: "contain",
@@ -60,14 +60,20 @@ function Card({ image, title, category, website }) {
         <Text className={classes.category} size="xs">
           {category}
         </Text>
-        <Title order={3} className={classes.title}>
+        <Title bg={"var(--dark-theme)"} order={3} className={classes.title}>
           {title}
         </Title>
       </div>
       <Button color="dark">
-        <a href={website} target="_blank" id="githubLink">
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
+        {title === "Snake Game" || title === "Uno Game" ? (
+          <a href={website} target="_blank" id="githubLink">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        ) : (
+          <a href={website} target="_blank" id="githubLink">
+            <FontAwesomeIcon icon={faChrome} />
+          </a>
+        )}
       </Button>
     </Paper>
   );
@@ -99,16 +105,16 @@ const data = [
     website: "https://pelumitayo.github.io/Flixster/",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Best places to visit this winter",
+    image: "unoGame.jpg",
+    title: "Uno Game",
     category: "tourism",
+    website: "https://github.com/PelumiTayo/Uno_Game",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Active volcanos reviews: travel at your own risk",
+    image: "snakeGame.png",
+    title: "Snake Game",
     category: "nature",
+    website: "https://github.com/PelumiTayo/Snake-Game",
   },
 ];
 

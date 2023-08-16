@@ -1,9 +1,9 @@
 #githubLink{
     font-size: 250%; 
-    color: white;
+    color: var(--stark);
     margin-bottom: 10%;
 }
 
 #githubLink:hover{
-    color:var(--fushia)
+    color:var(--jewel)
 }

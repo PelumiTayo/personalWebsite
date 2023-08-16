@@ -12,20 +12,24 @@ export default function Home() {
           <span id="name">Oluwapelumi </span> <span id="period"> . </span>{" "}
           <br />
           <div id="descriptors">
-            Student @ Wesleyan University | Backend Developer | Digital 
-            Marketer | Course Assistant | QuestBridge Match Scholar | 
-            Resident Advisor | Musician | Crocheter | Afrobeats and Afro-Dance
-            Fanatic
+            Student @ Wesleyan University | Backend Developer | Digital Marketer
+            | Course Assistant | QuestBridge Match Scholar | Resident Advisor |
+            Musician | Crocheter | Afrobeats and Afro-Dance Fanatic
           </div>
           <br />
           <div id="scroll">
-            <a href="#Skillset" style={{textDecoration: "none"}}>
-            <span style={{ fontSize: "120%", color: "white"}}>SCROLL FOR MORE</span>
+            <a href="#Skillset" style={{ textDecoration: "none" }}>
+              <span
+                style={{
+                  fontSize: "120%",
+                  color: "var(--stark)",
+                  paddingBottom: "7px",
+                  borderBottom: "2px solid var(--fushia)",
+                }}
+              >
+                SCROLL FOR MORE
+              </span>
             </a>
-            <br />
-            <span style={{ color: "var(--fushia)" }}>
-              ______________________
-            </span>
           </div>
         </div>
         <div id="homeImage">

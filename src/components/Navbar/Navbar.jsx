@@ -14,7 +14,9 @@ import {
 import {
   IconHome2,
   IconFolders,
-  IconTools
+  IconTools,
+  IconInfoCircle,
+  IconPhone
 } from "@tabler/icons-react";
 
 export default function Nav() {
@@ -26,7 +28,7 @@ export default function Nav() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "white",
+      color: "var(--stark)",
 
       "&:hover": {
         backgroundColor:
@@ -72,8 +74,8 @@ export default function Nav() {
     { icon: IconHome2, label: "Home" },
     { icon: IconTools, label: "Skillset" },
     { icon: IconFolders, label: "Projects" },
-    // { icon: IconCalendarStats, label: "Releases" },
-    // { icon: IconUser, label: "Account" },
+    { icon: IconInfoCircle, label: "About" },
+    { icon: IconPhone, label: "Contact" },
     // { icon: IconFingerprint, label: "Security" },
     // { icon: IconSettings, label: "Settings" },
   ];

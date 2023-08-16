@@ -1,5 +1,5 @@
 #Skillset{
-    color: white;
+    color: var(--stark);
     display: flex;
     width: 75%;
     max-width: 75%;
@@ -12,7 +12,6 @@
   border: 1px solid var(--fushia);
   background-color: var(--dark-theme);
   color: var(--fushia);
-  
   border-radius: 30px;
   padding: 8px;
 }
@@ -20,7 +19,7 @@
 #resumeButton:hover{
   cursor: pointer;
   background-color: var(--fushia);
-  color: white;
+  color: var(--stark);
 }
 
 
