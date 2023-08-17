@@ -1,28 +1,29 @@
 #logo-design {
-    width: 70px;
-    height: 60px;
-    max-width: 70px;
-    max-height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 12px;
-    background: var(--dark-theme);
-    color: var(--stark);
-    box-shadow: 7px 7px 7px var(--jewel);
-    font-size: 250%;
-    font-weight: bold;
-    margin-left: 13%;
-    margin-top: 3%;
-    animation: rotate 1.5s;
+  width: 70px;
+  height: 60px;
+  max-width: 70px;
+  max-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 12px;
+  background: var(--dark-theme);
+  box-shadow: 7px 7px 7px var(--jewel);
+  font-size: 250%;
+  font-weight: bold;
+  margin-left: 13%;
+  margin-top: 3%;
+  cursor: pointer;
+  animation: rotate 1.5s;
+}
+#logo-design a {
+  text-decoration: none;
+  color: var(--stark);
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
   }
-
- 
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import {
   Paper,
@@ -14,8 +14,11 @@ import {
   Avatar,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { Rings } from "react-loading-icons";
 
 export default function Contact() {
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const form = useForm({
     initialValues: {
       name: "",
@@ -29,24 +32,35 @@ export default function Contact() {
       subject: (value) => value.trim().length === 0,
     },
   });
-  
+
   function handleSubmit(e) {
     e.preventDefault();
     if (
       form.values.name.trim().length > 2 &&
-      !(!/^\S+@\S+$/.test(form.values.email)) &&
+      !!/^\S+@\S+$/.test(form.values.email) &&
       form.values.subject.trim().length > 0
     ) {
+      setLoading(true); // Start loading
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycby4_lMdgVoRYI9fIuP8b-138AJ54GNmrZCVmAtWdnyy4SI3gCXdcZ2gZ-HF7Rv_ITrO/exec";
-      const form = document.forms["submit-to-google-sheet"];
+        "https://script.google.com/macros/s/AKfycbymP04Iq3CieIzFTM16lELMFnPsJWV8uTuNxy118qyIrhij9O-k71bF37IqEXdTzNKzoA/exec";
+      const form1 = document.forms["submit-to-google-sheet"];
 
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => console.log("Success!", response))
-        .catch((error) => console.error("Error!", error.message));
+      fetch(scriptURL, { method: "POST", body: new FormData(form1) })
+        .then((response) => {
+          console.log("Success!", response);
+          form.reset();
+          setMessage("Form successfully submitted!");
+        })
+        .catch((error) => {
+          console.error("Error!", error.message);
+          setMessage("An error has occurred, please try again!");
+        })
+        .finally(() => {
+          setLoading(false); // Stop loading
+        });
     }
   }
-  
+
   function UserCardImage({ image, avatar, name, job }) {
     const useStyles = createStyles((theme) => ({
       avatar: {
@@ -98,7 +112,13 @@ export default function Contact() {
           c={"var(--stark)"}
           bg={"var(--fushia)"}
         >
-          Follow
+          <a
+            target="_blank"
+            style={{ textDecoration: "none", color: "var(--stark)" }}
+            href="https://github.com/PelumiTayo/"
+          >
+            Follow
+          </a>
         </Button>
       </Card>
     );
@@ -235,6 +255,7 @@ export default function Contact() {
           <form
             className={classes.form}
             onSubmit={form.onSubmit(() => {})}
+            name="submit-to-google-sheet"
           >
             <Text fz="lg" c={"var(--stark)"} fw={700} className={classes.title}>
               Get in touch
@@ -310,14 +331,26 @@ export default function Contact() {
                 variant="filled"
                 {...form.getInputProps("message")}
               />
-
+              <Text
+                fz="lg"
+                ta={"center"}
+                c={message === "Form successfully submitted!" ? "green" : "red"}
+                fw={700}
+                className={classes.title}
+              >
+                {message}
+              </Text>
               <Group position="right" mt="md">
                 <Button
                   type="submit"
                   onClick={handleSubmit}
                   className={classes.control}
                 >
-                  Send message
+                  {loading ? (
+                    <Rings stroke="white" speed={1.25} />
+                  ) : (
+                    <span>Send Message</span>
+                  )}
                 </Button>
               </Group>
             </div>

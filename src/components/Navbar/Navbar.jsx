@@ -16,7 +16,7 @@ import {
   IconFolders,
   IconTools,
   IconInfoCircle,
-  IconPhone
+  IconPhone,
 } from "@tabler/icons-react";
 
 export default function Nav() {
@@ -55,6 +55,8 @@ export default function Nav() {
     let newlabel;
     if (label === "Home") {
       newlabel = "/";
+    } else if (label === "About") {
+      newlabel = "#aboutH";
     }
     return (
       <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
@@ -95,7 +97,9 @@ export default function Nav() {
 
   return (
     <nav id="navbar">
-      <div id="logo-design">P</div>
+      <div id="logo-design">
+        <a href="/">P</a>
+      </div>
       <Navbar
         bg={"var(--dark-theme)"}
         pos={"fixed"}
@@ -105,7 +109,7 @@ export default function Nav() {
       >
         <Center>
           <a href="/">
-          <Image src={"logo.png"} />
+            <Image src={"logo.png"} />
           </a>
         </Center>
         <Navbar.Section grow mt={50}>
