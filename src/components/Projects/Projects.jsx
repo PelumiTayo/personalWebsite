@@ -43,6 +43,8 @@ const useStyles = createStyles((theme) => ({
 
 function Card({ image, title, category, website }) {
   const { classes } = useStyles();
+  const matches = useMediaQuery('(max-width: 470px)');
+
 
   return (
     <Paper
@@ -60,7 +62,7 @@ function Card({ image, title, category, website }) {
         <Text className={classes.category} size="xs">
           {category}
         </Text>
-        <Title bg={"var(--dark-theme)"} order={3} className={classes.title}>
+        <Title bg={"var(--dark-theme)"} order={3} className={classes.title} >
           {title}
         </Title>
       </div>
@@ -131,7 +133,7 @@ export default function CardsCarousel() {
     <>
       <div
         id="Projects"
-        style={{ width: "75%", margin: "0 auto" }}
+        style={{ width:"75%", margin: "0 auto" }}
         class="container"
       >
         <h1>

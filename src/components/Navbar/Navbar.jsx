@@ -18,8 +18,11 @@ import {
   IconInfoCircle,
   IconPhone,
 } from "@tabler/icons-react";
+import { useMediaQuery } from '@mantine/hooks';
 
 export default function Nav() {
+  const matches = useMediaQuery('(max-width: 500px)');
+
   const useStyles = createStyles((theme) => ({
     link: {
       width: rem(50),
@@ -103,7 +106,8 @@ export default function Nav() {
       <Navbar
         bg={"var(--dark-theme)"}
         pos={"fixed"}
-        height={750}
+        display={matches ? "none": "initial"}
+        height={"100vh"}
         width={{ base: 80 }}
         p="md"
       >
@@ -117,12 +121,6 @@ export default function Nav() {
             {links}
           </Stack>
         </Navbar.Section>
-        {/* <Navbar.Section>
-          <Stack justify="center" spacing={0}>
-            <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-            <NavbarLink icon={IconLogout} label="Logout" />
-          </Stack>
-        </Navbar.Section> */}
       </Navbar>
     </nav>
   );

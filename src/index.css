@@ -7,7 +7,7 @@
 
 body{
     background-color: var(--dark-theme);
-    padding-bottom: 5%;
+    padding: 1.5%;
 }
 
 html{

@@ -9,7 +9,7 @@ export default function Home() {
         <div id="homeContent">
           <p id="software">Software Engineer</p>
           <span id="helloworld"> Hello, it’s me </span> <br />
-          <span id="name">Oluwapelumi </span> <span id="period"> . </span>{" "}
+          <span id="name">Oluwapelumi <span id="period"> . </span></span> {" "}
           <br />
           <div id="descriptors">
             Student @ Wesleyan University | Backend Developer | Digital Marketer
@@ -24,6 +24,7 @@ export default function Home() {
                   fontSize: "120%",
                   color: "var(--stark)",
                   paddingBottom: "7px",
+                  marginTop: "5%",
                   borderBottom: "2px solid var(--fushia)",
                 }}
               >

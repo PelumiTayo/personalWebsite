@@ -274,7 +274,7 @@ export default function Contact() {
                   style={{ textDecoration: "none", color: "var(--fushia)" }}
                   href="mailto: pelumi.tayoorisadare@gmail.com"
                 >
-                  pelumi.tayoorisadare@gmail.com
+                  here.
                 </a>
               </span>
             </Text>

@@ -5,7 +5,11 @@ import { faGithub, fab } from "@fortawesome/free-brands-svg-icons";
 import { faC, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { createStyles, Avatar, Text, Group } from "@mantine/core";
 import { IconPhoneCall, IconAt, IconBook } from "@tabler/icons-react";
+import { useMediaQuery } from "@mantine/hooks";
+
 export default function Skills() {
+  const matches = useMediaQuery("(max-width: 1150px)");
+
   console.log(fab);
 
   const useStyles = createStyles((theme) => ({
@@ -37,7 +41,7 @@ export default function Skills() {
           </h1>
         </div>
         <div>
-          <Group noWrap>
+          <Group position="center">
             <Avatar src={"pelumi.png"} size={200} radius="md" />
             <div>
               <Text fz="lg" tt="uppercase" fw={700} c="dimmed">
@@ -51,7 +55,12 @@ export default function Skills() {
               <Group noWrap spacing={10} mt={3}>
                 <IconAt stroke={1.5} size="1rem" className={classes.icon} />
                 <Text fz="lg" c="dimmed">
-                  {"pelumi.tayoorisadare@gmail.com"}
+                  <a
+                    style={{ textDecoration: "none", color: "var(--fushia)" }}
+                    href="mailto: pelumi.tayoorisadare@gmail.com"
+                  >
+                    Email
+                  </a>
                 </Text>
               </Group>
 
@@ -66,17 +75,15 @@ export default function Skills() {
                 </Text>
               </Group>
               <Group noWrap spacing={10} mt={5}>
-                <IconBook
-                  stroke={1.5}
-                  size="1rem"
-                  className={classes.icon}
-                />
+                <IconBook stroke={1.5} size="1rem" className={classes.icon} />
                 <form
                   action="Tayo-Orisadare_Pelumi.pdf"
                   method="get"
                   target="_blank"
                 >
-                  <button id="resumeButton" type="submit">Resume</button>
+                  <button id="resumeButton" type="submit">
+                    Resume
+                  </button>
                 </form>
               </Group>
             </div>
