@@ -111,8 +111,9 @@
     /* background-color: red; */
   }
   #Home{
-    height: fit-content;
+    height: 100vh;
     width: fit-content;
+
   }
   #descriptors {
     text-align: center;
