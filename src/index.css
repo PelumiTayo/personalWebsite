@@ -1,16 +1,17 @@
-:root{
-    --dark-theme: #0E0B16;
-    --fushia: #a239ca;
-    --jewel: #4717F6;
-    --stark: #e7dfdd;
+:root {
+  --dark-theme: #0e0b16;
+  --fushia: #a239ca;
+  --jewel: #4717f6;
+  --stark: #e7dfdd;
 }
 
-body{
-    background-color: var(--dark-theme);
-    padding: 1.5%;
+body {
+  background-color: var(--dark-theme);
+  padding: 1.5%;
 }
 
-html{
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
+  padding-bottom: 12em;
+  overflow-x: hidden;
 }

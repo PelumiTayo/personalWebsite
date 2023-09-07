@@ -15,6 +15,8 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { Rings } from "react-loading-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Contact() {
   const [message, setMessage] = useState("");
@@ -117,7 +119,7 @@ export default function Contact() {
             style={{ textDecoration: "none", color: "var(--stark)" }}
             href="https://github.com/PelumiTayo/"
           >
-            Follow
+            Follow <FontAwesomeIcon icon={faGithub} />
           </a>
         </Button>
       </Card>
@@ -268,7 +270,7 @@ export default function Contact() {
               className={classes.title}
             >
               If you'd like to talk about a project you want help with or want
-              to work together or need any advice, just drop me a message at{" "}
+              to work together or need any advice, just drop me a message{" "}
               <span>
                 <a
                   style={{ textDecoration: "none", color: "var(--fushia)" }}

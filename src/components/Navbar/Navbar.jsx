@@ -18,10 +18,10 @@ import {
   IconInfoCircle,
   IconPhone,
 } from "@tabler/icons-react";
-import { useMediaQuery } from '@mantine/hooks';
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function Nav() {
-  const matches = useMediaQuery('(max-width: 500px)');
+  const navbar = useMediaQuery("(max-width: 1000px)");
 
   const useStyles = createStyles((theme) => ({
     link: {
@@ -81,8 +81,6 @@ export default function Nav() {
     { icon: IconFolders, label: "Projects" },
     { icon: IconInfoCircle, label: "About" },
     { icon: IconPhone, label: "Contact" },
-    // { icon: IconFingerprint, label: "Security" },
-    // { icon: IconSettings, label: "Settings" },
   ];
 
   const [active, setActive] = useState(0);
@@ -106,7 +104,7 @@ export default function Nav() {
       <Navbar
         bg={"var(--dark-theme)"}
         pos={"fixed"}
-        display={matches ? "none": "initial"}
+        display={navbar ? "none" : "initial"}
         height={"100vh"}
         width={{ base: 80 }}
         p="md"

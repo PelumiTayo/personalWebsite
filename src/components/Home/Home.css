@@ -1,4 +1,3 @@
-
 #software {
   position: absolute;
   font-size: 4rem;
@@ -29,11 +28,9 @@
   box-shadow: 7px 7px 7px var(--fushia);
 }
 #Home {
-  /* background-color: red; */
   color: white;
   margin: 0 auto;
   display: flex;
-  /* background-color: red; */
   width: 75%;
   justify-content: space-between;
   height: 88vh;
@@ -45,7 +42,6 @@
 
 #name {
   font-size: 3rem;
-  /* background-color: red; */
 }
 
 #period {
@@ -88,7 +84,8 @@
 #homeContent {
   padding-top: 15%;
   /* background-color: green; */
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 #scroll {
@@ -105,21 +102,18 @@
   }
 }
 
-@media (max-width: 1000px){
-  #homeImage{
+@media (max-width: 1000px) {
+  #homeImage {
     display: none;
-    /* background-color: red; */
   }
-  #Home{
-    height: 100vh;
+  #Home {
+    height: fit-content;
     width: fit-content;
-
   }
   #descriptors {
     text-align: center;
     margin: 0 auto;
     width: 90vw;
-    /* background-color: blue; */
     font-size: 150%;
   }
 }
