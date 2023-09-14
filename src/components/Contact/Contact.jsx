@@ -223,6 +223,7 @@ export default function Contact() {
   const { classes } = useStyles();
 
   return (
+    <>
     <div id="Contact">
       <h1 id="contactH">
         <div class="animation">
@@ -360,5 +361,7 @@ export default function Contact() {
         </div>
       </Paper>
     </div>
+      <p style={{color:'white', textAlign:"center"}}>Made by Oluwapelumi Tayo-Orisadare. Updated September 13th 2023</p>
+      </>
   );
 }
