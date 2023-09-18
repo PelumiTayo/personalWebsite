@@ -361,7 +361,7 @@ export default function Contact() {
         </div>
       </Paper>
     </div>
-      <p style={{color:'white', textAlign:"center"}}>Made by Oluwapelumi Tayo-Orisadare. Updated September 13th 2023</p>
+      <p style={{color:'white', textAlign:"center"}}>Made by Oluwapelumi Tayo-Orisadare. Updated September 17th 2023</p>
       </>
   );
 }
