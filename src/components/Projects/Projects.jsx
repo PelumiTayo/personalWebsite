@@ -12,6 +12,7 @@ import {
 import "./Projects.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChrome, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -41,10 +42,9 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Card({ image, title, category, website }) {
+function Card({ item }) {
   const { classes } = useStyles();
-  const matches = useMediaQuery('(max-width: 470px)');
-
+  const matches = useMediaQuery("(max-width: 470px)");
 
   return (
     <Paper
@@ -52,71 +52,105 @@ function Card({ image, title, category, website }) {
       p="lg"
       radius="lg"
       sx={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: "contain",
+        backgroundImage: `url(${item.image})`,
+        backgroundSize:
+          item.title === "Snake Game" || item.title === "SonicScore"
+            ? "50%"
+            : "contain", // Adjusted logic
         backgroundRepeat: "no-repeat",
       }}
       className={classes.card}
     >
       <div>
         <Text className={classes.category} size="xs">
-          {category}
+          {item.category}
         </Text>
-        <Title bg={"var(--dark-theme)"} order={3} className={classes.title} >
-          {title}
+        <Title bg={"var(--dark-theme)"} order={3} className={classes.title}>
+          {item.title}
         </Title>
       </div>
-      <Button color="dark">
-        {title === "Snake Game" || title === "Uno Game" ? (
-          <a href={website} target="_blank" id="githubLink">
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        ) : (
-          <a href={website} target="_blank" id="githubLink">
-            <FontAwesomeIcon icon={faChrome} />
-          </a>
+      <div>
+        {item.website && (
+          <Button color="dark">
+            <a href={item.website} target="_blank" id="githubLink">
+              <FontAwesomeIcon icon={faChrome} />
+            </a>
+          </Button>
         )}
-      </Button>
+        {item.github && (
+          <Button color="dark">
+            <a href={item.github} target="_blank" id="githubLink">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </Button>
+        )}
+        {item.mobile && (
+          <Button color="dark">
+            <a href={item.mobile} target="_blank" id="githubLink">
+              <FontAwesomeIcon icon={faMobileScreenButton} />{" "}
+            </a>
+          </Button>
+        )}
+      </div>
     </Paper>
   );
 }
 
 const data = [
   {
+    image: "jobQuest.png",
+    title: "Job Quest",
+    category: "React.js, Vite, NextUI, TailwindCSS",
+    website: "https://peachykeen-jobquest.netlify.app/",
+    github: "https://github.com/cherryontech/jobQuest",
+  },
+  {
+    image: "soundScore.jpg",
+    title: "SonicScore",
+    category: "React.js, Create-React-App, PHP, MaterialUI, MySQL, PHPmyadmin",
+    website: "https://soundscore-e4f0b.web.app/",
+    github: "https://github.com/PelumiTayo/comp333-MVC",
+    mobile: "https://play.google.com/apps/internaltest/4701577590839347571",
+  },
+  {
     image: "cashflow.png",
     title: "CashFlow Academy",
-    category: "nature",
+    category: "React.js, Express.js, PostgreSQL, Node.js, ChakraUI",
     website: "https://cashflow-ui-pfwm.onrender.com/",
+    github: "https://github.com/PelumiTayo/CashFlowCapstone",
   },
   {
     image: "lifetracker.png",
     title: "LifeTracker",
-    category: "beach",
+    category: "React, PostgreSQL, Express.js, Node.js",
     website: "https://life-tracker-frontend-pmww.onrender.com/",
+    github: "https://github.com/PelumiTayo/LifeTracker",
   },
   {
     image: "studentstore.png",
     title: "Student Store",
-    category: "nature",
+    category: "React",
     website: "https://studentstore-frontend.onrender.com/",
+    github: "https://github.com/PelumiTayo/studentStore",
   },
   {
     image: "flixster.png",
     title: "Flixster",
-    category: "nature",
+    category: "HTML, CSS, Javascript",
     website: "https://pelumitayo.github.io/Flixster/",
+    github: "https://github.com/PelumiTayo/Flixster",
   },
   {
     image: "unoGame.jpg",
     title: "Uno Game",
-    category: "tourism",
-    website: "https://github.com/PelumiTayo/Uno_Game",
+    category: "Python",
+    github: "https://github.com/PelumiTayo/Uno_Game",
   },
   {
     image: "snakeGame.png",
     title: "Snake Game",
-    category: "nature",
-    website: "https://github.com/PelumiTayo/Snake-Game",
+    category: "Python, Turtle",
+    github: "https://github.com/PelumiTayo/Snake-Game",
   },
 ];
 
@@ -125,7 +159,7 @@ export default function CardsCarousel() {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = data.map((item) => (
     <Carousel.Slide key={item.title}>
-      <Card {...item} />
+      <Card item={item} />
     </Carousel.Slide>
   ));
 
@@ -133,14 +167,14 @@ export default function CardsCarousel() {
     <>
       <div
         id="Projects"
-        style={{ width:"75%", margin: "0 auto" }}
-        class="container"
+        style={{ width: "75%", margin: "0 auto" }}
+        className="container"
       >
         <h1>
-          <div class="animation">
-            <span class="first">My</span>
-            <span class="oh">
-              <span class="second">&nbsp;Projects</span>
+          <div className="animation">
+            <span className="first">My</span>
+            <span className="oh">
+              <span className="second">&nbsp;Projects</span>
             </span>
           </div>
         </h1>

@@ -71,7 +71,7 @@ export default function Contact() {
         }`,
       },
     }));
-    const { classes, theme } = useStyles();
+    const { classes } = useStyles();
 
     return (
       <Card
@@ -79,6 +79,7 @@ export default function Contact() {
         sx={{
           border: "3px solid var(--fushia)",
           backgroundColor: "var(--dark-theme)",
+          marginTop: 40
         }}
         padding="xl"
         radius="md"
@@ -190,7 +191,7 @@ export default function Contact() {
         boxSizing: "border-box",
         position: "relative",
         borderRadius: theme.radius.lg,
-        backgroundImage: `url(vite.png)`,
+        backgroundImage: `url(vite.svg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         border: `${rem(1)} solid transparent`,
@@ -224,144 +225,153 @@ export default function Contact() {
 
   return (
     <>
-    <div id="Contact">
-      <h1 id="contactH">
-        <div class="animation">
-          <span class="first">Contact</span>
-          <span class="oh">
-            <span class="second">&nbsp;Me</span>
-          </span>
-        </div>
-      </h1>
-      <Paper shadow="md" radius="lg">
-        <div
-          style={{ border: "2px solid var(--jewel)" }}
-          className={classes.wrapper}
-        >
-          <div
-            style={{ backgroundColor: "var(--jewel)" }}
-            className={classes.contacts}
-          >
-            <Text fz="lg" fw={700} className={classes.title} c="#fff">
-              Contact information
-            </Text>
-            <UserCardImage
-              image={
-                "https://static.vecteezy.com/system/resources/thumbnails/026/342/794/original/programmer-typing-laptop-line-2d-loading-bar-animation-black-woman-programming-animated-cartoon-linear-character-4k-loading-motion-graphic-it-developer-code-download-bar-process-indicator-gif-video.jpg"
-              }
-              avatar={"logo.png"}
-              name={"Pelumi Tayo-Orisadare"}
-              job={"Software Engineer"}
-            />
+      <div id="Contact">
+        <h1 id="contactH">
+          <div className="animation">
+            <span className="first">Contact</span>
+            <span className="oh">
+              <span className="second">&nbsp;Me</span>
+            </span>
           </div>
-
-          <form
-            className={classes.form}
-            onSubmit={form.onSubmit(() => {})}
-            name="submit-to-google-sheet"
+        </h1>
+        <Paper shadow="md" radius="lg">
+          <div
+            style={{ border: "2px solid var(--jewel)" }}
+            className={classes.wrapper}
           >
-            <Text fz="lg" c={"var(--stark)"} fw={700} className={classes.title}>
-              Get in touch
-            </Text>
-            <Text
-              fz="lg"
-              ta={"center"}
-              c={"var(--stark)"}
-              fw={700}
-              className={classes.title}
+            <div
+              style={{ backgroundColor: "var(--jewel)" }}
+              className={classes.contacts}
             >
-              If you'd like to talk about a project you want help with or want
-              to work together or need any advice, just drop me a message{" "}
-              <span>
-                <a
-                  style={{ textDecoration: "none", color: "var(--fushia)" }}
-                  href="mailto: pelumi.tayoorisadare@gmail.com"
-                >
-                  here.
-                </a>
-              </span>
-            </Text>
-
-            <div style={{ color: "var(--stark)" }} className={classes.fields}>
-              <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-                <TextInput
-                  sx={{
-                    ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
-                  }}
-                  label="Your name"
-                  placeholder="Your name"
-                  name="name"
-                  variant="filled"
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  sx={{
-                    ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
-                  }}
-                  label="Your email"
-                  placeholder="123@pelumi.dev"
-                  name="email"
-                  variant="filled"
-                  {...form.getInputProps("email")}
-                  required
-                />
-              </SimpleGrid>
-
-              <TextInput
-                sx={{
-                  ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
-                }}
-                mt="md"
-                label="Subject"
-                placeholder="Subject"
-                name="subject"
-                variant="filled"
-                {...form.getInputProps("subject")}
-                required
+              <UserCardImage
+                image={
+                  "https://static.vecteezy.com/system/resources/thumbnails/026/342/794/original/programmer-typing-laptop-line-2d-loading-bar-animation-black-woman-programming-animated-cartoon-linear-character-4k-loading-motion-graphic-it-developer-code-download-bar-process-indicator-gif-video.jpg"
+                }
+                avatar={"logo.png"}
+                name={"Pelumi Tayo-Orisadare"}
+                job={"Software Engineer"}
               />
+            </div>
 
-              <Textarea
-                mt="md"
-                sx={{
-                  ["& .mantine-Textarea-label"]: { color: "var(--stark)" },
-                }}
-                label="Your message"
-                placeholder="Please include all relevant information"
-                minRows={3}
-                maxRows={5}
-                autosize
-                name="message"
-                variant="filled"
-                {...form.getInputProps("message")}
-              />
+            <form
+              className={classes.form}
+              onSubmit={form.onSubmit(() => {})}
+              name="submit-to-google-sheet"
+            >
               <Text
                 fz="lg"
-                ta={"center"}
-                c={message === "Form successfully submitted!" ? "green" : "red"}
+                c={"var(--stark)"}
                 fw={700}
                 className={classes.title}
               >
-                {message}
+                Get in touch
               </Text>
-              <Group position="right" mt="md">
-                <Button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className={classes.control}
+              <Text
+                fz="lg"
+                ta={"center"}
+                c={"var(--stark)"}
+                fw={700}
+                className={classes.title}
+              >
+                If you'd like to talk about a project you want help with or want
+                to work together or need any advice, just drop me a message{" "}
+                <span>
+                  <a
+                    style={{ textDecoration: "none", color: "var(--fushia)" }}
+                    href="mailto: pelumi.tayoorisadare@gmail.com"
+                  >
+                    here.
+                  </a>
+                </span>
+              </Text>
+
+              <div style={{ color: "var(--stark)" }} className={classes.fields}>
+                <SimpleGrid
+                  cols={2}
+                  breakpoints={[{ maxWidth: "sm", cols: 1 }]}
                 >
-                  {loading ? (
-                    <Rings stroke="white" speed={1.25} />
-                  ) : (
-                    <span>Send Message</span>
-                  )}
-                </Button>
-              </Group>
-            </div>
-          </form>
-        </div>
-      </Paper>
-    </div>
-      <p style={{color:'white', textAlign:"center"}}>Made by Oluwapelumi Tayo-Orisadare. Updated September 17th 2023</p>
-      </>
+                  <TextInput
+                    sx={{
+                      ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
+                    }}
+                    label="Your name"
+                    placeholder="Your name"
+                    name="name"
+                    variant="filled"
+                    {...form.getInputProps("name")}
+                  />
+                  <TextInput
+                    sx={{
+                      ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
+                    }}
+                    label="Your email"
+                    placeholder="123@pelumi.dev"
+                    name="email"
+                    variant="filled"
+                    {...form.getInputProps("email")}
+                    required
+                  />
+                </SimpleGrid>
+
+                <TextInput
+                  sx={{
+                    ["& .mantine-TextInput-label"]: { color: "var(--stark)" },
+                  }}
+                  mt="md"
+                  label="Subject"
+                  placeholder="Subject"
+                  name="subject"
+                  variant="filled"
+                  {...form.getInputProps("subject")}
+                  required
+                />
+
+                <Textarea
+                  mt="md"
+                  sx={{
+                    ["& .mantine-Textarea-label"]: { color: "var(--stark)" },
+                  }}
+                  label="Your message"
+                  placeholder="Please include all relevant information"
+                  minRows={3}
+                  maxRows={5}
+                  autosize
+                  name="message"
+                  variant="filled"
+                  {...form.getInputProps("message")}
+                />
+                <Text
+                  fz="lg"
+                  ta={"center"}
+                  c={
+                    message === "Form successfully submitted!" ? "green" : "red"
+                  }
+                  fw={700}
+                  className={classes.title}
+                >
+                  {message}
+                </Text>
+                <Group position="right" mt="md">
+                  <Button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className={classes.control}
+                  >
+                    {loading ? (
+                      <Rings stroke="white" speed={1.25} />
+                    ) : (
+                      <span>Send Message</span>
+                    )}
+                  </Button>
+                </Group>
+              </div>
+            </form>
+          </div>
+        </Paper>
+      </div>
+      <p style={{ color: "white", textAlign: "center" }}>
+        Made by Oluwapelumi Tayo-Orisadare. Updated December 10th 2023
+      </p>
+    </>
   );
 }

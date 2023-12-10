@@ -8,10 +8,10 @@ export default function About() {
     <>
       <div id="About">
         <h1 id="aboutH">
-          <div class="animation">
-            <span class="first">About</span>
-            <span class="oh">
-              <span class="second">&nbsp;Me</span>
+          <div className="animation">
+            <span className="first">About</span>
+            <span className="oh">
+              <span className="second">&nbsp;Me</span>
             </span>
           </div>
         </h1>
@@ -23,7 +23,15 @@ export default function About() {
         <div id="InnerAbout">
           <div id="innerone">
             <h1>Developing for the Greater Good</h1>
-            <a style={{textDecoration: "none"}} href="https://www.linkedin.com/in/oluwapelumi-tayo-orisadare/"><span id="followme"> Follow me <FontAwesomeIcon icon={faLinkedin} /></span></a>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://www.linkedin.com/in/oluwapelumi-tayo-orisadare/"
+            >
+              <span id="followme">
+                {" "}
+                Follow me <FontAwesomeIcon icon={faLinkedin} />
+              </span>
+            </a>
           </div>
           <div id="innertwo">
             I am interested in pursuing a career in technology because it allows

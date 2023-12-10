@@ -1,17 +1,23 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./Skills.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faPhp,
+  faPython,
+  faNode,
+  faJs,
+  faCss3,
+  faHtml5,
+  faFigma,
+  faGitAlt,
+  faReact,
+} from "@fortawesome/free-brands-svg-icons";
 import { faC, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { createStyles, Avatar, Text, Group } from "@mantine/core";
 import { IconPhoneCall, IconAt, IconBook } from "@tabler/icons-react";
-import { useMediaQuery } from "@mantine/hooks";
 
 export default function Skills() {
-  const matches = useMediaQuery("(max-width: 1150px)");
-
-  console.log(fab);
-
   const useStyles = createStyles((theme) => ({
     icon: {
       color:
@@ -30,12 +36,12 @@ export default function Skills() {
   return (
     <div id="Skillset">
       <div id="skillsContent">
-        <div class="container">
+        <div className="container">
           <h1>
-            <div class="animation">
-              <span class="first">My</span>
-              <span class="oh">
-                <span class="second">&nbsp;Skillset</span>
+            <div className="animation">
+              <span className="first">My</span>
+              <span className="oh">
+                <span className="second">&nbsp;Skillset</span>
               </span>
             </div>
           </h1>
@@ -90,116 +96,126 @@ export default function Skills() {
           </Group>
         </div>
       </div>
-      <div class="technical-skills-container">
-        <div class="skills-bottom">
-          <div class="lang-skills-container">
-            <div class="python-lang">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faPython} />{" "}
+      <div className="technical-skills-container">
+        <div className="skills-bottom">
+          <div className="lang-skills-container">
+            <div className="python-lang">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faPython} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">Python</div>
-                </div>
-              </div>
-            </div>
-            <div class="nodejs-lang">
-              <div class="each-skill">
-                <div class="circle" style={{ fontSize: "250%" }}>
-                  <FontAwesomeIcon icon={fab.faNode} />{" "}
-                </div>
-                <div class="skills-text">
-                  <div class="skills-label">Node.js</div>
+                <div className="skills-text">
+                  <div className="skills-label">Python</div>
                 </div>
               </div>
             </div>
-            <div class="c-lang">
-              <div class="each-skill">
-                <div class="circle">
+            <div className="nodejs-lang">
+              <div className="each-skill">
+                <div className="circle" style={{ fontSize: "250%" }}>
+                  <FontAwesomeIcon icon={faNode} />{" "}
+                </div>
+                <div className="skills-text">
+                  <div className="skills-label">Node.js</div>
+                </div>
+              </div>
+            </div>
+            <div className="c-lang">
+              <div className="each-skill">
+                <div className="circle">
                   <FontAwesomeIcon icon={faC} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">C</div>
+                <div className="skills-text">
+                  <div className="skills-label">C</div>
                 </div>
               </div>
             </div>
-            <div class="js-lang">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faJs} />{" "}
+            <div className="js-lang">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faJs} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">JavaScript</div>
-                </div>
-              </div>
-            </div>
-            <div class="css-lang">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faCss3} />{" "}
-                </div>
-                <div class="skills-text">
-                  <div class="skills-label">CSS</div>
+                <div className="skills-text">
+                  <div className="skills-label">JavaScript</div>
                 </div>
               </div>
             </div>
-            <div class="html-lang">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faHtml5} />{" "}
+            <div className="css-lang">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faCss3} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">HTML</div>
-                </div>
-              </div>
-            </div>
-            <div class="figma">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faFigma} />{" "}
-                </div>
-                <div class="skills-text">
-                  <div class="skills-label">Figma</div>
+                <div className="skills-text">
+                  <div className="skills-label">CSS</div>
                 </div>
               </div>
             </div>
-            <div class="git">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faGitAlt} />{" "}
+            <div className="html-lang">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faHtml5} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">Git</div>
+                <div className="skills-text">
+                  <div className="skills-label">HTML</div>
                 </div>
               </div>
             </div>
-            <div class="sql">
-              <div class="each-skill">
-                <div class="circle">
+            <div className="figma">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faFigma} />{" "}
+                </div>
+                <div className="skills-text">
+                  <div className="skills-label">Figma</div>
+                </div>
+              </div>
+            </div>
+            <div className="git">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faGitAlt} />{" "}
+                </div>
+                <div className="skills-text">
+                  <div className="skills-label">Git</div>
+                </div>
+              </div>
+            </div>
+            <div className="sql">
+              <div className="each-skill">
+                <div className="circle">
                   <FontAwesomeIcon icon={faDatabase} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">PostgresSql</div>
+                <div className="skills-text">
+                  <div className="skills-label">PostgresSql</div>
                 </div>
               </div>
             </div>
-            <div class="github">
-              <div class="each-skill">
-                <div class="circle">
+            <div className="github">
+              <div className="each-skill">
+                <div className="circle">
                   <FontAwesomeIcon icon={faGithub} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">GitHub</div>
+                <div className="skills-text">
+                  <div className="skills-label">GitHub</div>
                 </div>
               </div>
             </div>
-            <div class="express">
-              <div class="each-skill">
-                <div class="circle">
-                  <FontAwesomeIcon icon={fab.faReact} />{" "}
+            <div className="express">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faReact} />{" "}
                 </div>
-                <div class="skills-text">
-                  <div class="skills-label">React</div>
+                <div className="skills-text">
+                  <div className="skills-label">React</div>
+                </div>
+              </div>
+            </div>
+            <div className="express">
+              <div className="each-skill">
+                <div className="circle">
+                  <FontAwesomeIcon icon={faPhp} />{" "}
+                </div>
+                <div className="skills-text">
+                  <div className="skills-label">PHP</div>
                 </div>
               </div>
             </div>

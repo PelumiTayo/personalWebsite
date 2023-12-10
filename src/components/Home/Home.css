@@ -2,7 +2,6 @@
   position: absolute;
   font-size: 4rem;
   width: 20%;
-  /* background-color: red; */
   word-spacing: -30px;
   z-index: -1;
   margin-top: -40px;
@@ -56,13 +55,11 @@
 }
 
 #descriptors {
-  /* background-color: red; */
   max-width: 100%;
   font-size: 180%;
 }
 
 #homeImage img {
-  /* background-color: blue; */
   width: 100%;
   height: 80%;
   object-fit: contain;
@@ -83,7 +80,6 @@
 
 #homeContent {
   padding-top: 15%;
-  /* background-color: green; */
   width: 90%;
   margin: 0 auto;
 }
