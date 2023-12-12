@@ -107,10 +107,17 @@ const data = [
   {
     image: "soundScore.jpg",
     title: "SonicScore",
-    category: "React.js, Create-React-App, PHP, MaterialUI, MySQL, PHPmyadmin",
+    category: "React.js, Create-React-App, PHP, MaterialUI, MySQL, PHPmyadmin, ReactNative",
     website: "https://soundscore-e4f0b.web.app/",
     github: "https://github.com/PelumiTayo/comp333-MVC",
     mobile: "https://play.google.com/apps/internaltest/4701577590839347571",
+  },
+  {
+    image: "cultureat.png",
+    title: "CulturEat",
+    category: "React.js, Vite, ChakraUI",
+    website: "https://cultureat.co",
+    github: "https://github.com/PelumiTayo/HackHarvard",
   },
   {
     image: "cashflow.png",
