@@ -122,7 +122,7 @@ const data = [
   {
     image: "cashflow.png",
     title: "CashFlow Academy",
-    category: "React.js, Express.js, PostgreSQL, Node.js, ChakraUI",
+    category: "React.js, Express.js, PostgreSQL, Node.js, ChakraUI, OpenAI",
     website: "https://cashflow-ui-pfwm.onrender.com/",
     github: "https://github.com/PelumiTayo/CashFlowCapstone",
   },
