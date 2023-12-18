@@ -35,32 +35,25 @@ export default function Contact() {
     },
   });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (
-      form.values.name.trim().length > 2 &&
-      !!/^\S+@\S+$/.test(form.values.email) &&
-      form.values.subject.trim().length > 0
-    ) {
-      setLoading(true); // Start loading
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbymP04Iq3CieIzFTM16lELMFnPsJWV8uTuNxy118qyIrhij9O-k71bF37IqEXdTzNKzoA/exec";
-      const form1 = document.forms["submit-to-google-sheet"];
-
-      fetch(scriptURL, { method: "POST", body: new FormData(form1) })
-        .then((response) => {
-          console.log("Success!", response);
-          form.reset();
-          setMessage("Form successfully submitted!");
-        })
-        .catch((error) => {
-          console.error("Error!", error.message);
-          setMessage("An error has occurred, please try again!");
-        })
-        .finally(() => {
-          setLoading(false); // Stop loading
-        });
-    }
+  function handleSubmit() {
+    setLoading(true); // Start loading
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbymP04Iq3CieIzFTM16lELMFnPsJWV8uTuNxy118qyIrhij9O-k71bF37IqEXdTzNKzoA/exec";
+    const form1 = document.forms["submit-to-google-sheet"];
+    //submit formData to google sheets
+    fetch(scriptURL, { method: "POST", body: new FormData(form1) })
+      .then((response) => {
+        console.log("Success!", response);
+        form.reset();
+        setMessage("Form successfully submitted!");
+      })
+      .catch((error) => {
+        console.error("Error!", error.message);
+        setMessage("An error has occurred, please try again!");
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading
+      });
   }
 
   function UserCardImage({ image, avatar, name, job }) {
@@ -79,7 +72,7 @@ export default function Contact() {
         sx={{
           border: "3px solid var(--fushia)",
           backgroundColor: "var(--dark-theme)",
-          marginTop: 40
+          marginTop: 40,
         }}
         padding="xl"
         radius="md"
@@ -255,7 +248,21 @@ export default function Contact() {
 
             <form
               className={classes.form}
-              onSubmit={form.onSubmit(() => {})}
+              onSubmit={form.onSubmit(
+                (_event) => {
+                  if (form.isValid) {
+                    handleSubmit();
+                  }
+                },
+                (validationErrors, _values, _event) => {
+                  validationErrors.name &&
+                    form.setFieldError("name", "Enter your full name.");
+                  validationErrors.email &&
+                    form.setFieldError("email", "Enter a valid email.");
+                  validationErrors.subject &&
+                    form.setFieldError("subject", "Enter a subject.");
+                }
+              )}
               name="submit-to-google-sheet"
             >
               <Text
@@ -299,6 +306,7 @@ export default function Contact() {
                     name="name"
                     variant="filled"
                     {...form.getInputProps("name")}
+                    required
                   />
                   <TextInput
                     sx={{
@@ -354,7 +362,7 @@ export default function Contact() {
                 <Group position="right" mt="md">
                   <Button
                     type="submit"
-                    onClick={handleSubmit}
+                    onSubmit={handleSubmit}
                     className={classes.control}
                   >
                     {loading ? (
